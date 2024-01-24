@@ -1,0 +1,23 @@
+﻿@page "/virtualize"
+@inject HttpClient Http
+
+<PageTitle>Virtualize Example</PageTitle>
+
+<h1>Virtualize Example</h1>
+
+<Virtualize Context="car" ItemsProvider="@LoadCars" OverscanCount="@OverscanCount">
+    <ItemContent>
+        <tr class="background-main-table">
+            <td>@car.Id</td>
+            <td>@car.Name</td>
+            <td>@car.Cost</td>
+        </tr>
+    </ItemContent>
+    <Placeholder>
+        <tr class="background-placeholder-table">
+            <td>
+                Loading item...
+            </td>
+        </tr>
+    </Placeholder>
+</Virtualize>
